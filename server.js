@@ -22,5 +22,4 @@ app.use(function(err,req,res,next){
 
 app.listen(8080, () => {
   console.log('Server is running.')
-  console.log('Halo from jems')
 })
