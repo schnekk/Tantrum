@@ -4,13 +4,15 @@
   "description": "game site",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
   },
   "author": "tantrum",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.7.11"
+    "mongoose": "^5.7.11",
+    "nodemon": "^1.19.4",
+    "vue-cli": "^2.9.6"
   }
 }
