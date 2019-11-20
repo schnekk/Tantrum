@@ -14,6 +14,6 @@ const tagRoute = require('./routes/tag')
 //all routes are called here
 app.use(tagRoute)
 
-app.listen(8080, () => {
+app.listen(5000, () => {
   console.log('Server is running.')
 })
