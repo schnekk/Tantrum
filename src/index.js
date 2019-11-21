@@ -3,7 +3,7 @@ const app = express()
 const mongoose = require('mongoose')
 
 //connect to db
-mongoose.connect('mongodb+srv://Admin:tantrum@cluster0-gfhpd.gcp.mongodb.net/Streaddit?retryWrites=true&w=majority', { useUnifiedTopology: true,useNewUrlParser: true,useFindAndModify: false })
+mongoose.connect('mongodb+srv://Admin:tantrum@cluster0-gfhpd.gcp.mongodb.net/streaddit?retryWrites=true&w=majority', { useUnifiedTopology: true,useNewUrlParser: true,useFindAndModify: false })
 
 //body passing for postman
 app.use(express.json())
