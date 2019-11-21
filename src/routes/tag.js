@@ -16,7 +16,7 @@ router.get('/tag',async (req,res)=>{
 
 // add tag
 router.post('/tag',async (req,res)=>{
-    const tag = new tagModel(req.body)
+    const tag = await new tagModel(req.body)
     try{
       await tag.save()
       res.send(tag)
@@ -31,8 +31,9 @@ router.delete('/tag/:id',async (req,res)=>{
     const tag = await tagModel.findByIdAndDelete(req.params.id)
     if(!tag){
       res.status(404).send("No item found")
+    }else{
+      res.status(200).send(tag)
     }
-    res.status(200).send()
   }catch(err){
     res.status(500).send(err)
   }
@@ -42,8 +43,12 @@ router.delete('/tag/:id',async (req,res)=>{
 router.patch('/tag/:id',async (req,res)=>{
   try{
     const tag = await tagModel.findByIdAndUpdate(req.params.id,req.body)
-    await tag.save()
-    res.send(tag)
+    if(!tag){
+      res.status(404).send("No item found")
+    }else{
+      await tag.save()
+      res.status(200).send(tag)
+    }
   }catch(err){
     res.status(500).send(err)
   }
