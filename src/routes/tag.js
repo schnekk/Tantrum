@@ -1,13 +1,12 @@
 const express = require('express')
-const mongoose = require('mongoose')
 const router = express.Router()
 
 // model for data
 const tagModel = require('./models/tagModel')
 
 //show all tags
-router.get('/tag',(req,res)=>{
-  const tag = tagModel.find({})
+router.get('/tag',async (req,res)=>{
+  const tag = await tagModel.find({})
   try{
     res.send(tag)
   }catch(err){
@@ -16,10 +15,10 @@ router.get('/tag',(req,res)=>{
 })
 
 // add tag
-router.post('/tag',(req,res)=>{
+router.post('/tag',async (req,res)=>{
     const tag = new tagModel(req.body)
     try{
-      tag.save()
+      await tag.save()
       res.send(tag)
     }catch(err){
       res.status(500).send(err)
@@ -27,9 +26,9 @@ router.post('/tag',(req,res)=>{
   })
 
 // delete tag
-router.delete('/tag/:id',(req,res)=>{
+router.delete('/tag/:id',async (req,res)=>{
   try{
-    const tag = tagModel.findByIdAndDelete(req.params.id)
+    const tag = await tagModel.findByIdAndDelete(req.params.id)
     if(!tag){
       res.status(404).send("No item found")
     }
@@ -40,10 +39,10 @@ router.delete('/tag/:id',(req,res)=>{
 })
 
 // update tag
-router.patch('/tag/:id',(req,res)=>{
+router.patch('/tag/:id',async (req,res)=>{
   try{
-    const tag = tagModel.findByIdAndUpdate(req.params.id,req.body)
-    tag.save()
+    const tag = await tagModel.findByIdAndUpdate(req.params.id,req.body)
+    await tag.save()
     res.send(tag)
   }catch(err){
     res.status(500).send(err)
