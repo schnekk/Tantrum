@@ -1,11 +1,11 @@
 {
   "name": "streaddit",
   "version": "1.0.0",
-  "description": "game site",
-  "main": "server.js",
+  "description": "game review site with forum for each game",
+  "main": "index.js",
   "scripts": {
-    "start": "node src/server.js",
-    "dev": "nodemon src/server.js"
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
   },
   "author": "tantrum",
   "license": "ISC",

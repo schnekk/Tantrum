@@ -6,6 +6,10 @@ const mongoose = require('mongoose')
 mongoose.connect('mongodb+srv://Admin:tantrum@cluster0-gfhpd.gcp.mongodb.net/streaddit?retryWrites=true&w=majority', 
 { useUnifiedTopology: true,useNewUrlParser: true,useFindAndModify: false,useCreateIndex: true })
 
+//cors for send data across ports
+cors = require('./cors')
+app.use(cors())
+
 //body passing for postman
 app.use(express.json())
 
