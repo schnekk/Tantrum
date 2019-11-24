@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 // model for data
-const devModel = require('./models/devModel')
+const devModel = require('../models/devModel')
 
 //show all devs
 router.get('/developer',async (req,res)=>{

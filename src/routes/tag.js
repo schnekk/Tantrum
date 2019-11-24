@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 // model for data
-const tagModel = require('./models/tagModel')
+const tagModel = require('../models/tagModel')
 
 //show all tags
 router.get('/tag',async (req,res)=>{
@@ -16,8 +16,12 @@ router.get('/tag',async (req,res)=>{
 
 // add tag
 router.post('/tag',async (req,res)=>{
-    const tag = await new tagModel(req.body)
-    try{
+    const tag = await new tagModel({
+      name: req.body.name,
+      description: req.body.description,
+      game: []
+    })
+    try{  
       await tag.save()
       res.send(tag)
     }catch(err){
