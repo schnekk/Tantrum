@@ -1,18 +1,14 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <TagComponent/>
+    <router-view/>
   </div>
 </template>
 
 <script>
-import TagComponent from './components/TagComponent.vue'
 
 export default {
   name: 'app',
-  components: {
-    TagComponent
-  }
 }
 </script>
 
