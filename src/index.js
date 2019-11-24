@@ -11,9 +11,11 @@ app.use(express.json())
 
 //set routes
 const tagRoute = require('./routes/tag')
+const devRoute = require('./routes/dev')
 
 //all routes are called here
 app.use(tagRoute)
+app.use(devRoute)
 
 app.listen(5000, () => {
   console.log('Server is running.')
