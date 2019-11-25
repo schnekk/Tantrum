@@ -6,7 +6,7 @@ const tagModel = require('../models/tagModel')
 
 //show all tags
 router.get('/tag',async (req,res)=>{
-  const tag = await tagModel.find({})
+  const tag = await tagModel.find()
   try{
     res.send(tag)
   }catch(err){
@@ -43,7 +43,7 @@ router.delete('/tag/:id',async (req,res)=>{
   }
 })
 
-// update tag
+// update tag *** may have bug ***
 router.patch('/tag/:id',async (req,res)=>{
   try{
     const tag = await tagModel.findByIdAndUpdate(req.params.id,req.body)

@@ -45,11 +45,30 @@ router.post('/game/:id/tag',async (req,res)=>{
   }
 })
 
-// add tag to a game
-router.post('/game/:id',async (req,res)=>
-{
-  
+//test
+router.post('/test/:id',async (req,res)=>{
+  try{
+  const {id} = req.params;
+  const game = await gameModel.findById(id)
+  res.send(game)
+  }catch(err){
+    res.status(500).send(err)
+  }
 })
+
+// add tags to a game
+router.post('/game/:id',async (req,res)=>{
+  try{
+    const {id} = req.params;
+    const game = await gameModel.findById(id)
+    const tagDoc = req.body
+    tagDoc.tag.forEach(element => game.tag.push(element))
+    await game.save()
+    res.send(game)
+    }catch(err){
+      res.status(500).send(err)
+    }
+  })
 // delete game
 router.delete('/game/:id',async (req,res)=>{
   try{
