@@ -46,7 +46,10 @@ router.post('/game/:id/tag',async (req,res)=>{
 })
 
 // add tag to a game
-
+router.post('/game/:id',async (req,res)=>
+{
+  
+})
 // delete game
 router.delete('/game/:id',async (req,res)=>{
   try{
