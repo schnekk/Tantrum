@@ -14,7 +14,7 @@ router.get('/developer',async (req,res)=>{
   }
 })
 
-// add dev
+// add a new dev
 router.post('/developer',async (req,res)=>{
     const dev = await new devModel(req.body)
     try{
@@ -39,7 +39,7 @@ router.delete('/developer/:id',async (req,res)=>{
   }
 })
 
-// update tag
+// update dev
 router.patch('/developer/:id',async (req,res)=>{
   try{
     const dev = await devModel.findByIdAndUpdate(req.params.id,req.body)

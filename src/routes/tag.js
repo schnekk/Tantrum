@@ -14,7 +14,7 @@ router.get('/tag',async (req,res)=>{
   }
 })
 
-// add tag
+// add a new tag
 router.post('/tag',async (req,res)=>{
     const tag = await new tagModel({
       name: req.body.name,

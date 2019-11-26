@@ -18,24 +18,24 @@ router.get('/game',async (req,res)=>{
 
 // add a game
 router.post('/game',async (req,res)=>{
-    try{
-      const game = await new gameModel({
-        title: req.body.title,
-        description: req.body.description,
-        tag:[],
-        dev:null,
-        review:[],
-        link: req.body.link
-      })
-      await game.save()
-      res.send(game)
-    }catch(err){
-      res.status(500).send(err)
-    }
-  })
+  try{
+    const game = await new gameModel({
+    title: req.body.title,
+    description: req.body.description,
+    tag:[],
+    dev:null,
+    review:[],
+    link: req.body.link
+    })
+  await game.save()
+    res.send(game)
+  }catch(err){
+    res.status(500).send(err)
+  }
+})
 
 // show a game's tag
-router.post('/game/:id/tag',async (req,res)=>{
+router.get('/game/:id/tag',async (req,res)=>{
   try{
     const {id} = req.params;
     const game = await gameModel.findById(id).populate('tag')
@@ -45,30 +45,35 @@ router.post('/game/:id/tag',async (req,res)=>{
   }
 })
 
-//test
-router.post('/test/:id',async (req,res)=>{
+// add tags to a game
+router.post('/game/:id/tag',async (req,res)=>{
   try{
-  const {id} = req.params;
-  const game = await gameModel.findById(id)
-  res.send(game)
+    const {id} = req.params
+    const game = await gameModel.findById(id)
+    await game.update(
+      {$addToSet: {tag: {$each: req.body.tag}}}
+    )
+    //await game.save()
+    res.send(game)
   }catch(err){
     res.status(500).send(err)
   }
 })
 
-// add tags to a game
-router.post('/game/:id',async (req,res)=>{
+// add dev to a game
+router.post('/game/:id/developer',async (req,res)=>{
   try{
-    const {id} = req.params;
+    const {id} =req.params
     const game = await gameModel.findById(id)
-    const tagDoc = req.body
-    tagDoc.tag.forEach(element => game.tag.push(element))
+    const devDoc = req.body
+    game.dev = devDoc.dev
     await game.save()
     res.send(game)
-    }catch(err){
-      res.status(500).send(err)
-    }
-  })
+  }catch(err){
+    res.status(500).send(err)
+  }
+})
+
 // delete game
 router.delete('/game/:id',async (req,res)=>{
   try{
