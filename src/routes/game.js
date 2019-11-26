@@ -53,8 +53,14 @@ router.post('/game/:id/tag',async (req,res)=>{
     await game.update(
       {$addToSet: {tag: {$each: req.body.tag}}}
     )
+    /*for(i=0;i<req.body.tag.length;i++){
+      const {tagId} = req.body.tag[i]
+      const tag = await tagModel.findById(tagId)
+      await tag.update(
+        {$addToSet: {game: game.id}}
+    )}*/
     //await game.save()
-    res.send(game)
+    res.send(tag)
   }catch(err){
     res.status(500).send(err)
   }
