@@ -19,11 +19,13 @@ app.use(express.json())
 const tagRoute = require('./routes/tag')
 const devRoute = require('./routes/dev')
 const gameRoute = require('./routes/game')
+const reviewRoute = require('./routes/review')
 
 //all routes are called here
 app.use(tagRoute)
 app.use(devRoute)
 app.use(gameRoute)
+app.use(reviewRoute)
 
 app.listen(5000, () => {
   console.log('Server is running.')
