@@ -4,7 +4,7 @@ const router = express.Router()
 // model for data
 const tagModel = require('../models/tagModel')
 
-//show all tags
+//show all tags //
 router.get('/tag',async (req,res)=>{
   const tag = await tagModel.find()
   try{
@@ -14,7 +14,7 @@ router.get('/tag',async (req,res)=>{
   }
 })
 
-// add a new tag
+// add a new tag //
 router.post('/tag',async (req,res)=>{
     const tag = await new tagModel({
       name: req.body.name,
@@ -29,21 +29,23 @@ router.post('/tag',async (req,res)=>{
     }
   })
 
-// delete tag
+// delete tag //
 router.delete('/tag/:id',async (req,res)=>{
   try{
-    const tag = await tagModel.findByIdAndDelete(req.params.id)
+    const {id} = req.params
+    const tag = await tagModel.findById(id)
     if(!tag){
       res.status(404).send("No item found")
     }else{
-      res.status(200).send(tag)
+      await tag.remove({_id: tag._id})
+      res.status(200).send("Success")
     }
   }catch(err){
     res.status(500).send(err)
   }
 })
 
-// update tag *** may have bug ***
+// update tag //
 router.patch('/tag/:id',async (req,res)=>{
   try{
     const tag = await tagModel.findByIdAndUpdate(req.params.id,req.body)
@@ -51,7 +53,7 @@ router.patch('/tag/:id',async (req,res)=>{
       res.status(404).send("No item found")
     }else{
       await tag.save()
-      res.status(200).send(tag)
+      res.status(200).send("Success")
     }
   }catch(err){
     res.status(500).send(err)

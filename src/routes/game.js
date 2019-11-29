@@ -3,31 +3,12 @@ const router = express.Router()
 
 // model for data
 const tagModel = require('../models/tagModel')
-const devModel = require('../models/devModel')
 const gameModel = require('../models/gameModel')
 
 //show all games //
 router.get('/game',async (req,res)=>{
   const game = await gameModel.find({})
   try{
-    res.send(game)
-  }catch(err){
-    res.status(500).send(err)
-  }
-})
-
-// add a game
-router.post('/game',async (req,res)=>{
-  try{
-    const game = await new gameModel({
-    title: req.body.title,
-    description: req.body.description,
-    tag:[],
-    dev:null,
-    review:[],
-    link: req.body.link
-    })
-  await game.save()
     res.send(game)
   }catch(err){
     res.status(500).send(err)
@@ -45,21 +26,47 @@ router.get('/game/:id/tag',async (req,res)=>{
   }
 })
 
-// show a tag's games
+// show a tag's games //
 router.get('/tag/:id/game',async (req,res)=>{
   try{
     const {id} = req.params;
-    gameModel.findById(id).populate('game').exec((err,tag)=>{
-      tag.game=tag.game.filter(element=>element!=null)
-      res.send(tag)
-      tag.save()
-    })
+    const tag = await tagModel.findById(id).populate('game')
+    res.send(tag.game)
+    }catch(err){
+    res.status(500).send(err)
+  }
+})
+
+// show a game's dev //
+router.get('/game/:id/developer',async (req,res)=>{
+  try{
+    const {id} = req.params;
+    const game = await gameModel.findById(id).populate('dev')
+    res.send(game.dev)
   }catch(err){
     res.status(500).send(err)
   }
 })
 
-// add tags to a game and add a game to tags
+// add a game //
+router.post('/game',async (req,res)=>{
+  try{
+    const game = await new gameModel({
+    title: req.body.title,
+    description: req.body.description,
+    tag:[],
+    dev:null,
+    review:[],
+    link: req.body.link
+    })
+  await game.save()
+    res.send(game)
+  }catch(err){
+    res.status(500).send(err)
+  }
+})
+
+// add tags to a game //
 router.post('/game/:id/tag',async (req,res)=>{
   try{
     const {id} = req.params
@@ -104,7 +111,7 @@ router.delete('/game/:id',async (req,res)=>{
   }
 })
 
-// update game 
+// update game //
 router.patch('/game/:id',async (req,res)=>{
   try{
     const game = await gameModel.findByIdAndUpdate(req.params.id,req.body)
