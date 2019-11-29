@@ -35,17 +35,6 @@ router.post('/user',async (req,res)=>{
 
   // delete user
 router.delete('/user/:id',async (req,res)=>{
-  //delete from follower *not working
-    try{
-      userModel.update(
-        {},
-        {$pull: {follower: req.params.id}},
-        {multi: true}
-      )
-      res.send("Success")
-    }catch(err){
-      res.status(500).send(err)
-    }
     try{
       const user = await userModel.findByIdAndDelete(req.params.id)
       if(!user){
@@ -87,9 +76,10 @@ router.get('/user/:id/follower',async (req,res)=>{
   // add follower
 router.post('/user/:id/follower',async (req,res)=>{
   try{
-    const {id} = req.params
+    //res.send(req.params.id)
+    const {id} = req.params.id
     const user = await userModel.findById(id)
-    await user.update(
+    await userModel.update(
       {$addToSet: {follower: req.body.follower}}
     )
     res.send("Success")
@@ -97,6 +87,7 @@ router.post('/user/:id/follower',async (req,res)=>{
     res.status(500).send(err)
   }
 })
+
   //delete follower
   router.delete('/user/:id/follower/:followerid',async (req,res)=>{
     try{
@@ -106,7 +97,6 @@ router.post('/user/:id/follower',async (req,res)=>{
         {$pull: {follower: req.params.followerid}},
         {multi: true}
         )
-      res.send("Success")
     }catch(err){
       res.status(500).send(err)
     }

@@ -10,4 +10,18 @@ const userSchema = new mongoose.Schema({
   favGame: [{type: Schema.Types.ObjectId, ref: 'Game'}]
 },{ versionKey: false })
 
+//remove user from follower list
+userSchema.pre('remove', function(next){
+  try{
+    userModel.update(
+      {},
+      {$pull: {follower: this._id}},
+      {multi: true}  
+      ).exec()
+    next()
+  }catch(err){
+    next(err)
+  }
+})
+
 module.exports = mongoose.model('User',userSchema)
