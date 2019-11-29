@@ -45,6 +45,7 @@ router.get('/game/:id/tag',async (req,res)=>{
   }
 })
 
+// show a tag's games
 router.get('/tag/:id/game',async (req,res)=>{
   try{
     const {id} = req.params;
@@ -65,11 +66,6 @@ router.post('/game/:id/tag',async (req,res)=>{
     const game = await gameModel.findById(id)
     await game.update(
       {$addToSet: {tag: {$each: req.body.tag}}}
-    )
-    await tagModel.update(
-      {_id: {$in:game.tag}},
-      {$addToSet: {game: game._id}},
-      {multi: true}
     )
     res.send("Success")
   }catch(err){
@@ -92,20 +88,15 @@ router.post('/game/:id/developer',async (req,res)=>{
   }
 })
 
-// delete game
+// delete game //
 router.delete('/game/:id',async (req,res)=>{
   try{
     const {id} = req.params
     const game = await gameModel.findById(id)
-    tagModel.update(
-      {_id:{$in: game.tag}},
-      {$pull: {game: game._id}},
-      {multi: true}
-    )
-    //await gameModel.findByIdAndDelete(id)
     if(!game){
       res.status(404).send("No item found")
     }else{
+      await game.remove({_id: game._id})
       res.status(200).send("Success")
     }
   }catch(err){
