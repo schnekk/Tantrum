@@ -35,6 +35,17 @@ router.post('/user',async (req,res)=>{
 
   // delete user
 router.delete('/user/:id',async (req,res)=>{
+  //delete from follower *not working
+    try{
+      userModel.update(
+        {},
+        {$pull: {follower: req.params.id}},
+        {multi: true}
+      )
+      res.send("Success")
+    }catch(err){
+      res.status(500).send(err)
+    }
     try{
       const user = await userModel.findByIdAndDelete(req.params.id)
       if(!user){
