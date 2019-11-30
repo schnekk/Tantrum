@@ -1,8 +1,6 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const tagModel = require('../models/tagModel')
-
 const gameSchema = new mongoose.Schema({
   title: {type: String,required: 'Please enter title name.'},
   description: {type: String,required: 'Please enter game description.'},
@@ -15,7 +13,7 @@ const gameSchema = new mongoose.Schema({
 // add a game to each tags
 gameSchema.post('update', function(doc){
   try{
-      tagModel.update(
+      mongoose.model("Tag").update(
         {_id: {$in: this._update.$addToSet.tag.$each}},
         {$addToSet: {game: this._conditions._id}},
         {multi: true}
@@ -28,7 +26,7 @@ gameSchema.post('update', function(doc){
 // remove a game in tag before remove game
 gameSchema.pre('remove', function(next){
   try{
-    tagModel.update(
+    mongoose.model("Tag").update(
       {},
       {$pull: {game: this._id}},
       {multi: true}  
