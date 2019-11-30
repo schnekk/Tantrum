@@ -13,7 +13,7 @@ const userSchema = new mongoose.Schema({
 //remove user from follower list
 userSchema.pre('remove', function(next){
   try{
-    userModel.update(
+    mongoose.model("User").update(
       {},
       {$pull: {follower: this._id}}
       ).exec()
