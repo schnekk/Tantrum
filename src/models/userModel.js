@@ -15,8 +15,7 @@ userSchema.pre('remove', function(next){
   try{
     userModel.update(
       {},
-      {$pull: {follower: this._id}},
-      {multi: true}  
+      {$pull: {follower: this._id}}
       ).exec()
     next()
   }catch(err){

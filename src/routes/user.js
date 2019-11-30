@@ -36,11 +36,13 @@ router.post('/user',async (req,res)=>{
   // delete user
 router.delete('/user/:id',async (req,res)=>{
     try{
-      const user = await userModel.findByIdAndDelete(req.params.id)
+      const {id} = req.params
+      const user = await userModel.findById(id)
       if(!user){
         res.status(404).send("No item found")
       }else{
-        res.status(200).send(user)
+        await user.remove({_id: user._id})
+        res.status(200).send("Success")
       }
     }catch(err){
       res.status(500).send(err)
@@ -77,9 +79,10 @@ router.get('/user/:id/follower',async (req,res)=>{
 router.post('/user/:id/follower',async (req,res)=>{
   try{
     //res.send(req.params.id)
-    const {id} = req.params.id
-    const user = await userModel.findById(id)
+    // const {id} = req.params.id
+    // const user = await userModel.findById(id)
     await userModel.update(
+      {_id: req.params.id},
       {$addToSet: {follower: req.body.follower}}
     )
     res.send("Success")
@@ -91,12 +94,11 @@ router.post('/user/:id/follower',async (req,res)=>{
   //delete follower
   router.delete('/user/:id/follower/:followerid',async (req,res)=>{
     try{
-      //res.send(req.params)
-      userModel.update(
-        {_id:  req.params.id},
-        {$pull: {follower: req.params.followerid}},
-        {multi: true}
+      const user = await userModel.findById(req.params.id)
+      await user.update(
+        {$pull: {follower: req.params.followerid}}
         )
+      res.send("Success")
     }catch(err){
       res.status(500).send(err)
     }
