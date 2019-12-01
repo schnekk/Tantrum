@@ -58,16 +58,10 @@
          
     </v-avatar> 
     </v-row>
-
-      
-
-
-
   </v-app-bar>
 
 
    <v-content >
-
     <v-container fluid>      
      <v-row>
         <v-col cols="12">
@@ -156,10 +150,10 @@
        <v-col cols="6">
         <v-btn class="mr-2" outlined color>RPG</v-btn>
         <v-btn class="mr-2" outlined color>Action</v-btn>
-         <v-btn class="mr-2" outlined color>Simulator</v-btn>
-          <v-btn class="mr-2" outlined color>More...</v-btn>
-         </v-col>
-         </v-row>
+        <v-btn class="mr-2" outlined color>Simulator</v-btn>
+        <v-btn class="mr-2" outlined color>More...</v-btn>
+      </v-col>
+        </v-row>
       </v-col>
     </v-row>
 
