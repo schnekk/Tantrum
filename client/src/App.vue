@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <Bar/>
-  <div>ASDASDSADADSADSASADSDSAD</div>
+  <div>test1</div>
     <v-content>      
      <!-- <HelloWorld/> -->    
   <!-- <Buttonlogin/> -->
