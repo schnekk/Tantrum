@@ -54,6 +54,7 @@
           <v-col cols="12">
             <div class="">
               <hl class ="display-1">Monter Hunter World : Iceborn</hl>
+            <v-btn class="mb-2" text color="pink"><v-icon>mdi-heart</v-icon></v-btn>
             </div>
           </v-col>
         </v-row>
@@ -93,7 +94,35 @@
             <v-btn class="ma-1" outlined color>Co-op</v-btn>
             <v-btn class="ma-1" outlined color>Action</v-btn>
             <v-btn class="ma-1" outlined color>Hunting</v-btn>
-            <v-btn class="ma-1" outlined color>More...</v-btn>
+             <v-dialog v-model="dialog" scrollable max-width="300px">
+      <template v-slot:activator="{ on }">
+        <v-btn class="ma-1" outlined color v-on="on" >MORE...</v-btn>
+      </template>
+      <v-card>
+        <v-card-title>Game tag</v-card-title>
+        <v-divider></v-divider>
+        <v-card-text style="height: 300px;">
+           <div class="mt-4" >
+             RPG
+           </div>
+             <div class="mt-4" >
+             Action
+           </div>
+             <div class="mt-4" >
+             Hunting
+           </div>
+             <div class="mt-4" >
+             Co-op
+           </div>
+        </v-card-text>
+        <v-divider></v-divider>
+        <v-card-actions>
+          <v-col cols="9">
+          </v-col>
+          <v-btn color="blue darken-1" class="btn-left" text @click="dialog = false">Close</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
           </v-col>
         </v-row>
 
@@ -314,7 +343,9 @@
               Monster Hunter: World received critical acclaim upon release, with critics praising how Capcom was able to make the game more accessible to new players and to Western markets, without detracting from the series' core gameplay elements and enjoyable difficulty, and fully taking advantage of the computational capacity of modern consoles to create living ecosystems, with some even calling it the best in the franchise. Monster Hunter: World is the best-selling game in Capcom's history, with over 14 million copies shipped by October 2019. A large expansion pack, titled Iceborne, was released in September 2019.
             </div>
           </v-col>
-          <v-col cols="3"></v-col> 
+          <v-col cols="3">
+            <v-btn class="" text color><v-icon>mdi-pencil-outline</v-icon></v-btn>
+            </v-col> 
         </v-row>
 
         <v-row>
@@ -351,7 +382,8 @@
               was released in September 2019.
             </div>
           </v-col>
-          <v-col cols="3"></v-col> 
+          <v-col cols="3">
+            </v-col> 
         </v-row>
       </v-container>
     </v-content>
