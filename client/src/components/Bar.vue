@@ -221,12 +221,18 @@ export default {
   name: "Bar",
   components: {
   },
-  data(){
-    return{
-    login: false,
-    register: false
-  }
-  }
+  data: () => ({
+    login:false,
+    register:false,
+    
+    avatar:"/Tantrum/src/image/pepe_meme.jpg",
+    username:"",
+    displayName:"",
+    password:"",
+    confirmPassword:"",
+    email:"",
+    favTag:[]
+  }),
 }
 </script>
 

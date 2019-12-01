@@ -7,6 +7,7 @@ const userSchema = new mongoose.Schema({
   displayName: {type: String,required: true},
   password: {type: String,required: true},
   email: {type: String,required: true},
+  favTag: [{type: Schema.Types.ObjectId, ref: 'Tag'}],
   follower: [{type: Schema.Types.ObjectId, ref: 'User'}],
   favGame: [{type: Schema.Types.ObjectId, ref: 'Game'}]
 },{ versionKey: false })

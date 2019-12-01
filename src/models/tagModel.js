@@ -21,4 +21,19 @@ tagSchema.pre('remove', function(next){
   }
 })
 
+// remove a tag in user after remove tag
+tagSchema.post('remove', function(doc){
+  try{
+    mongoose.model("User").update(
+      {},
+      {$pull: {favTag: this._id}},
+      {multi: true}
+    ).exec()
+    console.log(doc)
+  }catch(err){
+    next(err)
+  }
+})
+
+
 module.exports = mongoose.model('Tag',tagSchema)

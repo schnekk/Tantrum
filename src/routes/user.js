@@ -23,6 +23,7 @@ router.post('/user',async (req,res)=>{
         displayName: req.body.displayName,
         password: req.body.password,
         email: req.body.email,
+        favTag: req.body.favTag,
         follower: [],
         favGame: []
       })
