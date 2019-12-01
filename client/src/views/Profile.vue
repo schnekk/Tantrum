@@ -93,8 +93,8 @@
       <v-card>
         <v-card-title>Game tag</v-card-title>
         <v-divider></v-divider>
-        <v-card-text style="height: 300px;">
-          <v-radio-group  v-model="dialogm1" column>
+        <v-card-text style="height: 300px;">         
+          <v-radio-group multiple  v-model="dialogm1" column>
             <v-radio label="RPG" value="RPG"></v-radio>
             <v-radio label="Action" value="Action"></v-radio>
             <v-radio label="Adventure" value="Adventure"></v-radio>
@@ -206,15 +206,15 @@
      
      <v-row justify="center">
      <v-col cols="2">
-        <v-img src="./assets/Pla.png" aspect-ratio="2"></v-img>
+        <v-img :src="require('@/assets/Pla.png')" aspect-ratio="2"></v-img>
       
       </v-col>
        <v-col cols="2">
-        <v-img src="./assets/TeKKen.png" aspect-ratio="2"></v-img>
+        <v-img :src="require('@/assets/TeKKen.png')" aspect-ratio="2"></v-img>
        
       </v-col>
       <v-col cols="2">
-        <v-img src="./assets/cyber.png" aspect-ratio="2"></v-img>
+        <v-img :src="require('@/assets/cyber.png')" aspect-ratio="2"></v-img>
       </v-col>
      
       </v-row>
