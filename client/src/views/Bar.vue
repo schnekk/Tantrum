@@ -246,3 +246,4 @@
     </v-app-bar>
 </nav>
 </template>
+<script>

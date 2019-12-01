@@ -5,8 +5,8 @@ import VueRouter from 'vue-router'
 //const Profile = () => import("./views/Bar.vue");
 Vue.use(VueRouter)
 
-/*const routes = [
-  {
+const routes = [
+  /*{
     path: '/',
     name: 'home',
     component: Bar
@@ -15,13 +15,13 @@ Vue.use(VueRouter)
     path:'/profile',
     name:'profile',
     component: Profile
-  } 
-]*/
+  } */ 
+]
 
-const routes = new VueRouter({
+const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
 })
 
-export default routes
+export default router

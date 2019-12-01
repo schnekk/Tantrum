@@ -1,8 +1,12 @@
 <template>
   <v-app>
     <Bar/>
+
     <v-content>      
-      <Gamepageuser/>
+     <!-- <HelloWorld/> -->    
+  <!-- <Buttonlogin/> -->
+ <!-- <Profile/>  -->
+ <Gamepageuser/>
     </v-content>
   </v-app>
 </template>
