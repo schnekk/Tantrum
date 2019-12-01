@@ -20,6 +20,7 @@ router.post('/user',async (req,res)=>{
       const user = await new userModel({
         avatar: req.body.avatar,
         username: req.body.username,
+        displayName: req.body.displayName,
         password: req.body.password,
         email: req.body.email,
         follower: [],
