@@ -6,6 +6,9 @@ const reviewSchema = new mongoose.Schema({
   game: {type:Schema.Types.ObjectId, ref: 'Game'},
   review: {type: String},
   score: {type: Number,required:'Please enter your score.',min:0,max:5},
+  criticScore1: {type: Number,min:0,max:5},
+  criticScore2: {type: Number,min:0,max:5},
+  criticScore3: {type: Number,min:0,max:5}
 },{ versionKey: false, timestamps: true })
 
 module.exports = mongoose.model('Review',reviewSchema)

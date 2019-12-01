@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+var mongoose = require('mongoose');
 
 // model for data
 const reviewModel = require('../models/reviewModel')
@@ -19,7 +20,7 @@ router.post('/review',async (req,res)=>{
     try{
       const review = await new reviewModel({
         user: null,
-        game: null,
+        game: req.body.game,
         review: req.body.review,
         score: req.body.score
       })
@@ -56,6 +57,25 @@ router.patch('/review/:id',async (req,res)=>{
       res.status(200).send(review)
     }
   }catch(err){
+    res.status(500).send(err)
+  }
+})
+
+  //find mean
+router.get('/review/:gameid/mean',async (req,res)=>{
+  try{
+    gameid = mongoose.Types.ObjectId(req.params.gameid)
+    const review = await reviewModel.aggregate([
+      {$match: {game: gameid}},
+      {
+        $group:{
+          _id: "$game",
+          avgScore: {$avg: "$score"}
+        }
+      }
+    ])
+    res.send(review)
+   }catch(err){
     res.status(500).send(err)
   }
 })
