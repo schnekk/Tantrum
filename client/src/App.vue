@@ -1,23 +1,28 @@
 <template>
-  <div id="app">
-  <router-view/>
-  </div>
+  <v-app>
+    <Bar/>
+    <v-content>      
+      <Gamepageuser/>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-
+//import HelloWorld from './components/HelloWorld';
+import Bar from './views/Bar';
+//import Profile from './views/Profile';
+import Gamepageuser from './components/Gamepageuser';
+//import Buttonlogin from './components/Buttonlogin'
+//import TEST from './components/TEST'
 export default {
-  name: 'app',
-}
-</script>
+  name: 'App',
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  components: {
+    /*HelloWorld,*/Bar,/*Buttonlogin*//*Profile,*//*TEST*/Gamepageuser
+  },
+
+  data: () => ({
+    //
+  }),
+};
+</script>

@@ -3,7 +3,6 @@ const router = express.Router()
 
 // model for data
 const reviewModel = require('../models/reviewModel')
-const gameModel = require('../models/gameModel')
 
 //show all reviews
 router.get('/review',async (req,res)=>{

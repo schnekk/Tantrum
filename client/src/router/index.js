@@ -1,21 +1,27 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import TagComponent from '@/components/TagComponent'
-import HomeComponent from '@/components/HomeComponent'
+import VueRouter from 'vue-router'
+//import Bar from './views/Bar'
+//import Profile from './views/Profile'
+//const Profile = () => import("./views/Bar.vue");
+Vue.use(VueRouter)
 
-Vue.use(Router)
+const routes = [
+  /*{
+    path: '/',
+    name: 'home',
+    component: Bar
+  },
+  {
+    path:'/profile',
+    name:'profile',
+    component: Profile
+  } */ 
+]
 
-export default new Router({
-    routes:[
-        {
-            path: '/home',
-            name: 'Home',
-            component: HomeComponent
-        },
-        {
-            path: '/tag',
-            name: 'Tag',
-            component: TagComponent
-        }
-    ]
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes
 })
+
+export default router
