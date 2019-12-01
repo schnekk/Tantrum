@@ -123,7 +123,7 @@
           <v-container>
             <div class="font-weight-medium headline text-left mx-4 my-2">User account</div>
             <v-divider></v-divider>
-            <div class="mt-6 mx-3 subtitle-1 font-weight-medium">User name</div>
+            <div class="mt-6 mx-3 subtitle-1 font-weight-medium">Username</div>
             <v-text-field
               solo
               class="mt-1 mx-2"
@@ -224,7 +224,7 @@ export default {
   data: () => ({
     login:false,
     register:false,
-    
+
     avatar:"/Tantrum/src/image/pepe_meme.jpg",
     username:"",
     displayName:"",
