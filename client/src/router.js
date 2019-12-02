@@ -12,6 +12,12 @@ import profileother from './views/profileother'
 import Editreview from './views/Editreview'
 import Buttonforgetusername from './views/Buttonforgetusername'
 import Homeuser from './views/Homeuser'
+import Anthempage from './views/Anthempage'
+import ASSpage from './views/ASSpage'
+import Cyberpage from './views/Cyberpage'
+import Deathpage from './views/Deathpage'
+import GTApage from './views/GTApage'
+import Reddeadpage from './views/Reddeadpage'
 Vue.use(Router)
 
 export default new Router({
@@ -24,8 +30,8 @@ export default new Router({
       component: Home
     },
     {
-      path: '/info',
-      name: 'Gamepage',
+      path: '/monsterhunterinfo',
+      name: 'info1',
       component: Gamepage
     },
     {
@@ -72,6 +78,36 @@ export default new Router({
       path: '/homeuser',
       name: 'homeuser',
       component: Homeuser
+    },
+    {
+      path: '/antheminfo',
+      name: 'info2',
+      component: Anthempage
+    },
+    {
+      path: '/assassininfo',
+      name: 'info3',
+      component: ASSpage
+    },
+    {
+      path: '/cyberinfo',
+      name: 'info4',
+      component: Cyberpage
+    },
+    {
+      path: '/deathinfo',
+      name: 'info5',
+      component: Deathpage
+    },
+    {
+      path: '/gtainfo',
+      name: 'info6',
+      component: GTApage
+    },
+    {
+      path: '/reddeadinfo',
+      name: 'info7',
+      component: Reddeadpage
     },
   ]
 })
