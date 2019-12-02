@@ -9,9 +9,10 @@
     <v-app-bar-title class="headline font-weight-bold mx-6">
       <router-link to="home" class="link"> STREADDIT</router-link>
     </v-app-bar-title>
-    
+    <v-row justify="center">
+      <v-col cols="10">
     <v-text-field
-      class="mx-10"
+      class="mx-10 my-1"
       dense
       solo
       background-color="white"
@@ -20,6 +21,8 @@
       label=" Search"
       prepend-inner-icon="mdi-magnify"
     />
+      </v-col>
+    
 
     <div class="text-center">
       <v-dialog
@@ -27,7 +30,7 @@
         width="600"
       >
         <template v-slot:activator="{ on }">
-          <v-btn class="ma-2" 
+          <v-btn class="ma-4" 
             outlined 
             color 
             v-on="on">
@@ -230,7 +233,7 @@
         width="750"
       >
         <template v-slot:activator="{ on }">
-          <v-btn class="ma-2" 
+          <v-btn class="ma-4" 
             outlined 
             color 
             v-on="on">
@@ -406,7 +409,8 @@
           </v-card-actions>
         </v-card>
       </v-dialog>
-    </div>           
+    </div>   
+    </v-row>        
   </v-app-bar>
 </nav>
 </template>

@@ -6,12 +6,15 @@
     color="#212121"
     dark
   >
-    <v-app-bar-title class="headline font-weight-bold mx-6">
+      
+    <v-app-bar-title class="headline font-weight-bold mx-6 ">
       <router-link to="home" class="link"> STREADDIT</router-link>
     </v-app-bar-title>
-    
+      <v-row justify="center">
+      
+      <v-col cols="12" md="4" lg="10">
     <v-text-field
-        class="ml-10"
+        class=" my-1"
         dense
         solo
         background-color="white"
@@ -20,10 +23,11 @@
         label=" Search"
         prepend-inner-icon="mdi-magnify"
     />
-
-    <v-row >
-        <v-col cols="7"></v-col>
-        <v-avatar enabled class="profile" > 
+      </v-col>
+    <v-col cols="12" md="4" lg="1" ></v-col>
+        <v-col cols="12" md="4" lg="1" >
+          
+        <v-avatar enabled class="profile" size="50" > 
             <img class=""
                 src="https://cdn.vuetifyjs.com/images/john.jpg"
                 alt="John"
@@ -37,8 +41,8 @@
                  </v-list-item-content>
             </v-list-item>     
         </v-avatar> 
+    </v-col>
     </v-row>
-
   </v-app-bar>
 </nav>
 </template>

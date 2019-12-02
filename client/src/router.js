@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
 import Home from './views/Home'
 import Gamepage from './views/Gamepage'
 import Profile from './views/Profile'
@@ -18,9 +17,10 @@ import Cyberpage from './views/Cyberpage'
 import Deathpage from './views/Deathpage'
 import GTApage from './views/GTApage'
 import Reddeadpage from './views/Reddeadpage'
+import TEST from './views/TEST'
 Vue.use(Router)
 
-const router = new Router({
+export default new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes:[
@@ -109,8 +109,11 @@ const router = new Router({
       name: 'info7',
       component: Reddeadpage
     },
+    {
+      path: '/test',
+      name: 'test',
+      component: TEST
+    }
   ]
 })
-
-export default router
 
