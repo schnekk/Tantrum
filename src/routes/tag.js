@@ -6,7 +6,7 @@ const tagModel = require('../models/tagModel')
 
 //show all tags //
 router.get('/tag',async (req,res)=>{
-  const tag = await tagModel.find()
+  const tag = await tagModel.find().sort({name:1})
   try{
     res.send(tag)
   }catch(err){

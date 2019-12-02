@@ -46,17 +46,20 @@
             <v-divider></v-divider>
             <div class="mt-6 mx-3 subtitle-1 font-weight-medium">Username</div>
             <v-text-field
+              v-model="username"
+              :rules="[rules.required]"
               solo
               class="mt-1 mx-2"
               dense
               background-color="white"
               light
               width="10px"
-              hide-details
               label=" enter your username"        
             />        
             <div class="mt-6 mx-3 subtitle-1 font-weight-medium">Password</div>
             <v-text-field
+              v-model="password"
+              :rules="[rules.required]"           
               solo
               class="mt-1 mx-2"
               dense
@@ -111,7 +114,9 @@
           <v-btn class="ma-2" 
             outlined 
             color 
-            v-on="on">Sign up</v-btn>
+            v-on="on">
+          Sign up
+          </v-btn>
         </template>
         <v-card>
           <v-card-title
@@ -125,77 +130,140 @@
             <v-divider></v-divider>
             <div class="mt-6 mx-3 subtitle-1 font-weight-medium">Username</div>
             <v-text-field
+              v-model="username"
+              :rules="[rules.required]"
               solo
               class="mt-1 mx-2"
               dense
               background-color="white"
               light
               width="10px"
-              hide-details
               label=" enter your username"        
             /> 
             <div class="mt-6 mx-3 subtitle-1 font-weight-medium">Display name</div>
             <v-text-field
+              v-model="displayName"
+              :rules="[rules.required]"
               solo
               class="mt-1 mx-2"
               dense
               background-color="white"
               light
               width="10px"
-              hide-details
               label=" enter your display name"        
             /> 
             <div class="mt-6 mx-3 subtitle-1 font-weight-medium">Password</div>
             <v-text-field
+              v-model="password"
+              :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+              :type="show ? 'text' : 'password'"
+              :rules="[rules.required, rules.min, rules.max]"
+              @click:append="show=!show"
+              hint="At least 8 characters"
               solo
               class="mt-1 mx-2"
               dense
               background-color="white"
               light
               width="10px"
-              hide-details
-              label=" enter your password"        
+              label=" enter your password"
             /> 
             <div class="mt-6 mx-3 subtitle-1 font-weight-medium">Confirm password</div>
             <v-text-field
+              v-model="confirmPassword"
+              :append-icon="show ? 'mdi-eye' : 'mdi-eye-off'"
+              :type="show ? 'text' : 'password'"
+              :rules="[rules.required]"
+              @click:append="show=!show"
+              :error-messages='passwordMatch()'
+              hint="Must be the same as password above"
               solo
               class="mt-1 mx-2"
               dense
               background-color="white"
               light
               width="10px"
-              hide-details
-              label=" enter your password"        
+              label="re-enter your password"        
             /> 
             <div class="mt-6 mx-3 subtitle-1 font-weight-medium">E-mail address</div>
             <v-text-field
+              v-model="email"
+              :rules="[rules.required]"
               solo
               class="mt-1 mx-2"
               dense
               background-color="white"
               light
               width="10px"
-              hide-details
               label=" enter your e-mail address"        
             /> 
-            <div class="mt-6 mx-3 subtitle-1 font-weight-medium">Game tag</div>
-            <v-text-field
-              solo
-              class="mt-1 mx-2"
-              dense
-              background-color="white"
-              light
-              width="10px"
-              hide-details
-              label=" pick your game tag"        
-            />
+            <div class="mt-6 mx-3 subtitle-1 font-weight-medium">Favourite Game tag</div>
+              <div class="mt-1 ml-1">
+                <v-dialog
+                  v-model="chooseTag"
+                  width="350"
+                >
+                  <template v-slot:activator="{ on }">
+                    <v-btn
+                      color="grey darken-1"
+                      outlined
+                      small
+                      class="mx-2 mb-2"
+                      v-on="on"
+                      @click="getTag();"
+                    >
+                      Choose here
+                    </v-btn>
+                  </template>
+                  <v-card light>
+                    <v-card-title
+                      class="headline grey darken-4 white--text"
+                      primary-title
+                    >
+                    Add favourite tag(s)
+                    </v-card-title>
+                    <v-container>
+                      <div class="font-weight-medium headline text-left ml-1 my-2">Tag list</div>
+                      <v-divider></v-divider>
+                      <div v-for="item in tagList" v-bind:key="item._id">
+                          <v-checkbox class="ml-1 my-3"
+                            v-model="favTag" 
+                            :label=item.name 
+                            :value=item._id 
+                            :rules="[rules.tagRule]"
+                            hide-details>
+                          </v-checkbox>
+                      </div>
+                      <v-divider></v-divider>
+                      <v-btn
+                        color="grey darken-1"
+                        outlined
+                        small
+                        class="ml-1 mt-4 mb-2"
+                        @click="chooseTag=false"
+                      >
+                      Comfirm
+                      </v-btn>
+                      <v-btn
+                        color="grey darken-1"
+                        outlined
+                        small
+                        class="mx-5 mt-4 mb-2"
+                        @click="chooseTag=false; favTag=[];"
+                      >
+                      Cancel
+                      </v-btn>
+                    </v-container>
+                  </v-card>
+                </v-dialog>
+              </div>
           </v-container>
           <v-divider class="mt-3"></v-divider>
           <v-card-actions>
             <v-btn
               color="grey darken-1"
               outlined
-              class="mx-3 mb-2"
+              class="mx-3 mt-4 mb-2"
               @click="dialog = false"
             >
               Sign up
@@ -203,7 +271,7 @@
             <v-btn
               color="grey darken-1"
               outlined
-              class="mx-2 mb-2"
+              class="mx-2 mt-4 mb-2"
               @click="register = false"
             >
               Cancel
@@ -217,22 +285,41 @@
 </template>
 
 <script>
+const url = 'http://localhost:5000/tag'
+
 export default {
   name: "Bar",
   components: {
   },
   data: () => ({
-    login:false,
-    register:false,
+    login: false,
+    register: false,
+    show: false,
+    chooseTag:false,
+    tagList: [],
 
-    avatar:"/Tantrum/src/image/pepe_meme.jpg",
-    username:"",
-    displayName:"",
-    password:"",
-    confirmPassword:"",
-    email:"",
-    favTag:[]
+    avatar: "/Tantrum/src/image/pepe_meme.jpg",
+    username: "",
+    displayName: "",
+    password: "",
+    confirmPassword: "",
+    email: "",
+    favTag: [],
+    rules: {
+      required: value => !!value || 'Required',
+      min: v => v.length >= 8 || 'Min 8 characters',
+      max: v => v.length <= 16 || 'Max 16 characters',
+      tagRule: v=>v.length > 0 || 'Please select at least 1 tag'
+    }
   }),
+  methods: {
+    passwordMatch () { 
+    return (this.password === this.confirmPassword) ? '' : 'Password must match'
+    },
+    getTag(){
+      this.$http.get(url).then(response => (this.tagList = response.data))
+    }
+  }
 }
 </script>
 

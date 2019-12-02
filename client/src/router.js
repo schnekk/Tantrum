@@ -3,7 +3,6 @@ import Router from 'vue-router'
 
 import Home from './views/Home'
 import Gamepage from './views/Gamepage'
-
 import Profile from './views/Profile'
 
 Vue.use(Router)
