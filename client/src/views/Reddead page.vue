@@ -1,60 +1,11 @@
 <template>
   <v-app>
-    <v-app-bar  
-      app
-      class="justify-center"
-      color="#212121"
-      dark> 
-      <v-col cols="1">
-        <v-appbar-title>
-          <img
-          class =""
-          :src="require('@/assets/STREADDIT (1).png')"
-          alt="Logo"
-          width=""
-          height=""
-          style="cursor: pointer">
-        </v-appbar-title>
-      </v-col>
-      <v-col cols="1"></v-col>
-      <v-col cols="8">
-        <v-text-field
-          solo
-          class="ma-4"
-          dense
-          background-color="white"
-          light
-          width="10px"
-          hide-details
-          label=" Search"
-          prepend-inner-icon="mdi-magnify"/> 
-      </v-col>
-      <v-row justify="">
-        <v-col cols="7"></v-col>
-        <v-avatar enabled class="profile" > 
-          <img class=""
-            src="https://cdn.vuetifyjs.com/images/john.jpg"
-            alt="John"
-          >
-          <v-list-item > 
-            <v-list-item-content >
-              <v-list-item-title class="title m">Marcus Obrien</v-list-item-title>
-              <v-list-item-subtitle>
-                <v-btn text x-small Lowercase>Log out</v-btn>
-              </v-list-item-subtitle>
-            </v-list-item-content>
-          </v-list-item>   
-        </v-avatar> 
-      </v-row>
-    </v-app-bar>
-
     <v-content>
       <v-container fluid>      
         <v-row>
           <v-col cols="12">
             <div class="">
-              <hl class ="display-1">Monter Hunter World : Iceborn</hl>
-            <v-btn class="mb-2" text color="pink"><v-icon>mdi-heart</v-icon></v-btn>
+              <hl class ="display-1">Red Dead Redemption 2</hl>
             </div>
           </v-col>
         </v-row>
@@ -69,32 +20,32 @@
 
         <v-row justify="space-around">
           <v-col class="my-4" cols="8">
-            <v-img :src="require('@/assets/monsterhunter.png')" aspect-ratio="2.3"></v-img>
+            <v-img :src="require('@/assets/red.jpg')" aspect-ratio="2.3"></v-img>
           </v-col>
         </v-row>
-  
+
         <v-row justify="center">
           <v-col cols="1">
-            <v-img :src="require('@/assets/mh1.jpg')" aspect-ratio="2"></v-img>
+            <v-img :src="require('@/assets/red1.jpg')" aspect-ratio="2"></v-img>
           </v-col>
           <v-col cols="1">
-            <v-img :src="require('@/assets/mh2.jpg')" aspect-ratio="2"></v-img>
+            <v-img :src="require('@/assets/red2.jpg')" aspect-ratio="2"></v-img>
           </v-col>
           <v-col cols="1">
-            <v-img :src="require('@/assets/mh4.jpg')" aspect-ratio="2"></v-img>
+            <v-img :src="require('@/assets/red3.jpg')" aspect-ratio="2"></v-img>
           </v-col>
           <v-col cols="1">
-            <v-img :src="require('@/assets/mh5.jpg')" aspect-ratio="2"></v-img>
+            <v-img :src="require('@/assets/red4.jpg')" aspect-ratio="2"></v-img>
           </v-col>
         </v-row>
 
         <v-row justify="">
           <v-col cols="2"></v-col>
           <v-col cols="9">
-            <v-btn class="ma-1" outlined color>Co-op</v-btn>
             <v-btn class="ma-1" outlined color>Action</v-btn>
-            <v-btn class="ma-1" outlined color>Hunting</v-btn>
-             <v-dialog v-model="dialog" scrollable max-width="300px">
+            <v-btn class="ma-1" outlined color>Adventure</v-btn>
+            <v-btn class="ma-1" outlined color>Shooting</v-btn>
+            <v-dialog v-model="dialog" scrollable max-width="300px">
       <template v-slot:activator="{ on }">
         <v-btn class="ma-1" outlined color v-on="on" >MORE...</v-btn>
       </template>
@@ -103,23 +54,22 @@
         <v-divider></v-divider>
         <v-card-text style="height: 300px;">
            <div class="mt-4" >
-             RPG
-           </div>
-             <div class="mt-4" >
              Action
            </div>
              <div class="mt-4" >
-             Hunting
+            Adventure
            </div>
              <div class="mt-4" >
-             Co-op
+             Shooting
+           </div>
+             <div class="mt-4" >
+             Open World
            </div>
         </v-card-text>
         <v-divider></v-divider>
         <v-card-actions>
           <v-col cols="9">
           </v-col>
-          <v-btn color="blue darken-1" class="btn-left" text @click="dialog = false">Close</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -140,31 +90,61 @@
           <v-col cols="2"></v-col>
           <v-col cols="8">
             <div class="font-weight-bold"> 
-            Monster Hunter: World[a] is an action role-playing game developed and published by Capcom. A part of the Monster Hunter series, it was released worldwide for PlayStation 4 and Xbox One in January 2018, with a Microsoft Windows version in August 2018. In the game, the player takes the role of a Hunter, tasked to hunt down and either kill or trap monsters that roam in one of several environmental spaces. If successful, the player is rewarded through loot consisting of parts from the monster and other elements that are used to craft weapons and armor, amongst other equipment. The game's core loop has the player crafting appropriate gear to be able to hunt down more difficult monsters, which in turn provide parts that lead to more powerful gear. Players may hunt alone or in a group of up to four players via the game's online multiplayer.   
+         Red Dead Redemption 2, the critically acclaimed open world epic from Rockstar Games and the highest rated game of the console generation, now enhanced for PC with new Story Mode content, visual upgrades and more.
+        Red Dead Redemption 2, the critically acclaimed open world epic from Rockstar Games and the highest rated game of the console generation, now enhanced for PC with new Story Mode content, visual upgrades and more.  
             </div>
           </v-col>
           <v-col cols="2"></v-col> 
         </v-row>
 
+
+        
         <v-row justify="">
           <v-col cols="2"></v-col>
           <v-col cols="8">
             <div class="font-weight-bold"> 
-              Announced at E3 2017, Monster Hunter: World adopts the series' standard formulas from its older home console roots and recent handheld games to take advantage of the higher processing power provided by modern consoles and computers. Changes made in Monster Hunter: World include creating environmental spaces that are fully connected and removing the "zones" that were necessary for the PlayStation 2 and handheld games, more advanced monster artificial intelligence and physics to create seemingly living ecosystems that could be taken advantage of during hunts, a more persistent cooperative multiplayer experience, and a refinement of the game's user interface, menu systems, and tutorials to help with bringing new players into the series. These changes led Capcom to plan for the game's simultaneous release across both Japan and Western markets, since Monster Hunter as a series has generally languished in the West compared to Japan partially due to disparate release schedules. Capcom also opted to support online play between these different geographic regions for similar reasons. The delay for the Windows release was attributed to Capcom seeking to make sure its first foray into the Windows market was optimized for players on computers. 
+        America, 1899. The end of the wild west era has begun. After a robbery goes badly wrong in the western town of Blackwater, Arthur Morgan and the Van der Linde gang are forced to flee. With federal agents and the best bounty hunters in the nation massing on their heels, the gang must rob, steal and fight their way across the rugged heartland of America in order to survive. As deepening internal divisions threaten to tear the gang apart, Arthur must make a choice between his own ideals and loyalty to the gang who raised him. 
             </div>
           </v-col>
           <v-col cols="2"></v-col> 
-        </v-row>  
+        </v-row>
 
+
+           
         <v-row justify="">
           <v-col cols="2"></v-col>
           <v-col cols="8">
             <div class="font-weight-bold"> 
-              Monster Hunter: World received critical acclaim upon release, with critics praising how Capcom was able to make the game more accessible to new players and to Western markets, without detracting from the series' core gameplay elements and enjoyable difficulty, and fully taking advantage of the computational capacity of modern consoles to create living ecosystems, with some even calling it the best in the franchise. Monster Hunter: World is the best-selling game in Capcom's history, with over 14 million copies shipped by October 2019. A large expansion pack, titled Iceborne, was released in September 2019.
+        With all new graphical and technical enhancements for deeper immersion, Red Dead Redemption 2 for PC takes full advantage of the power of the PC to bring every corner of this massive, rich and detailed world to life including increased draw distances; higher quality global illumination and ambient occlusion for improved day and night lighting; improved reflections and deeper, higher resolution shadows at all distances; tessellated tree textures and improved grass and fur textures for added realism in every plant and animal.
             </div>
           </v-col>
-            <v-col cols="2"></v-col> 
+          <v-col cols="2"></v-col> 
         </v-row>
+
+   <v-row justify="">
+          <v-col cols="2"></v-col>
+          <v-col cols="8">
+            <div class="font-weight-bold"> 
+       Red Dead Redemption 2 for PC also offers HDR support, the ability to run high-end display setups with 4K resolution and beyond, multi-monitor configurations, widescreen configurations, faster frame rates and more.
+            </div>
+          </v-col>
+          <v-col cols="2"></v-col> 
+        </v-row>
+
+
+           <v-row justify="">
+          <v-col cols="2"></v-col>
+          <v-col cols="8">
+            <div class="font-weight-bold">       
+            Red Dead Redemption 2 for PC also includes additional Story Mode content including Bounty Hunting Missions, Gang Hideouts, Weapons and more; plus free access to the shared living world of Red Dead Online featuring all previously released improvements and the latest content for the complete Online experience including Frontier Pursuits and the specialist Roles of The Bounty Hunter, Trader and Collector, and much more.
+            Red Dead Redemption 2 for PC is the ultimate way to experience one of the most critically acclaimed games of all time, winner of over 175 Game of the Year Awards and recipient of over 250 perfect scores.
+            </div>
+          </v-col>
+          <v-col cols="2"></v-col> 
+        </v-row>
+      
+
+
 
         <v-row>
           <v-col cols="12">
@@ -187,7 +167,7 @@
           <v-col class="ml-12" cols="8">
             <vue-plyr>
               <div class="plyr__video-embed">
-                <iframe class="ml-12" width="1020" height="630" src="https://www.youtube.com/embed/WecYe1RFMnc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class="ml-12" width="1020" height="630" src="https://www.youtube.com/embed/Mc8ptmcCHMI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </vue-plyr>
           </v-col>
@@ -210,20 +190,20 @@
           <v-row class="my-4" justify="">
             <v-col cols="1"></v-col>
             <v-col cols="1">
-              <v-img class="min=" :src="require('@/assets/spec1.png')" aspect-ratio="1"></v-img>
+             
             </v-col>
             <v-col cols="8">
               <div class="headline font-weight-bold mt-5" style="width;"> 
-                Monster Hunter World : Iceborne
+               Red Dead Redemption 2
               </div>
               <div class="font-weight-bold"> 
-                Developer : capcom 
+                Developer : Rockstar Games
               </div>
               <div class="font-weight-bold"> 
-                Platforms : PC , Xbox One , PS4
+                Platforms : PC , PS4 
               </div>
               <div class="font-weight-bold"> 
-                Release Date : 6 September 2019 ( 9th January 2020 on PC )
+                Release Date :  6 Dec, 2019
               </div>
             </v-col> 
           </v-row> 
@@ -272,7 +252,7 @@
           </v-col>
           <v-col class="" cols="3">
             <div class="font-weight-bold">
-              89%
+              95%
             </div>
           </v-col>
         </v-row>
@@ -340,12 +320,10 @@
           </v-col>
           <v-col cols="5">
             <div class="font-weight-bold ml-5"> 
-              Monster Hunter: World received critical acclaim upon release, with critics praising how Capcom was able to make the game more accessible to new players and to Western markets, without detracting from the series' core gameplay elements and enjoyable difficulty, and fully taking advantage of the computational capacity of modern consoles to create living ecosystems, with some even calling it the best in the franchise. Monster Hunter: World is the best-selling game in Capcom's history, with over 14 million copies shipped by October 2019. A large expansion pack, titled Iceborne, was released in September 2019.
+              Red Dead Redemption 2 is a masterpiece. No other game has ever tried and succeeded to capture a sense of a time and place long gone while also blending social commentary so well. The addition of a multiplayer mode that's a real step up from Rockstar's last effort makes Red Dead Redemption 2 unmissable on PC.
             </div>
           </v-col>
-          <v-col cols="3">
-            <v-btn class="" text color><v-icon>mdi-pencil-outline</v-icon></v-btn>
-            </v-col> 
+          <v-col cols="3"></v-col> 
         </v-row>
 
         <v-row>
@@ -379,11 +357,10 @@
           </v-col>
           <v-col cols="5">
             <div class="font-weight-bold ml-5"> 
-              was released in September 2019.
+           Red Dead Redemption 2 on PC expands what we saw on consoles a year ago. It brings new content for the campaign in the form of new weapons and missions, as well as a very entertaining photo mode. Technically it's superb and the mouse+keyboard control fits like a glove.
             </div>
           </v-col>
-          <v-col cols="3">
-            </v-col> 
+          <v-col cols="3"></v-col> 
         </v-row>
       </v-container>
     </v-content>
@@ -392,14 +369,10 @@
 
 <script>
 export default {
-  name: 'App',
-
+  name: "Gamepage",
   components: {
-
   },
-
   data: () => ({
-    //
   }),
-};
+}
 </script>
