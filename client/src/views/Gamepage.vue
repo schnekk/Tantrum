@@ -26,16 +26,16 @@
 
         <v-row justify="center">
           <v-col cols="1">
-            <v-img :src="require('@/assets/monsterhunter.png')" aspect-ratio="2"></v-img>
+            <v-img :src="require('@/assets/mh1.jpg')" aspect-ratio="2"></v-img>
           </v-col>
           <v-col cols="1">
-            <v-img :src="require('@/assets/monsterhunter.png')" aspect-ratio="2"></v-img>
+            <v-img :src="require('@/assets/mh2.jpg')" aspect-ratio="2"></v-img>
           </v-col>
           <v-col cols="1">
-            <v-img :src="require('@/assets/monsterhunter.png')" aspect-ratio="2"></v-img>
+            <v-img :src="require('@/assets/mh4.jpg')" aspect-ratio="2"></v-img>
           </v-col>
           <v-col cols="1">
-            <v-img :src="require('@/assets/monsterhunter.png')" aspect-ratio="2"></v-img>
+            <v-img :src="require('@/assets/mh5.jpg')" aspect-ratio="2"></v-img>
           </v-col>
         </v-row>
 
