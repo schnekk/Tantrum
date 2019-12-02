@@ -1,19 +1,25 @@
 <template>
   <v-app>
-    <bar/>
+    <userbar/>
     <router-view/>
   </v-app>
 </template>
 
 <script>
-import bar from './components/Bar'
+//import bar from './components/Bar'
+import userbar from './components/UserBar'
 
 export default {
   name: 'App',
   components: {
-    bar
+    //bar,
+    userbar
   },
   data: () => ({
+    local:null
   }),
+  methods:{
+
+  }
 };
 </script>

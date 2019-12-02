@@ -7,7 +7,7 @@
     dark
   >
     <v-app-bar-title class="headline font-weight-bold mx-6">
-      <a><router-link to="home" class="link"> STREADDIT </router-link></a>
+      <router-link to="home" class="link"> STREADDIT</router-link>
     </v-app-bar-title>
     
     <v-text-field
@@ -207,7 +207,7 @@
               color="grey darken-1"
               outlined
               class="mx-3 mb-2"
-              @click="login(); login=false"
+              @click="getToken; login=false"
             >
             login
             </v-btn>
@@ -431,6 +431,7 @@ export default {
     confirmPassword: "",
     email: "",
     favTag: [],
+    local:null,
     rules: {
       required: value => !!value || 'Required',
       min: v => v.length >= 8 || 'Min 8 characters',
@@ -448,28 +449,28 @@ export default {
     }
     ,
     submitUser(){
-        this.$http.post("/user",{
-            avatar: this.avatar,
-            username: this.username,
-            displayName: this.displayName,
-            password: this.password,
-            email: this.email,
-            favTag: this.favTag
-          }).then(response => (response))
+      this.$http.post("/user",{
+        avatar: this.avatar,
+        username: this.username,
+        displayName: this.displayName,
+        password: this.password,
+        email: this.email,
+        favTag: this.favTag
+      }).then(response => (response))
     },
     validate () {
       if (this.$refs.form.validate()) {
         this.snackbar = true
-        return 1
-    }else{
-      return 0
-    }
+      }
     },
-    login(){
+    getToken(){
       this.$http.post("/login",{
         username: this.username,
         password: this.password
-      }).then(response => (response))
+      }).then(response => (localStorage['token'] = response.data.token))
+    },
+    getLocalToken(){
+      this.local = localStorage.getItem('token')
     }
   }
 }
