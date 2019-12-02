@@ -128,6 +128,11 @@
           <v-container>
             <div class="font-weight-medium headline text-left mx-4 my-2">User account</div>
             <v-divider></v-divider>
+            <v-form
+              ref="form"
+              v-model="valid"
+              lazy-validation
+            >
             <div class="mt-6 mx-3 subtitle-1 font-weight-medium">Username</div>
             <v-text-field
               v-model="username"
@@ -138,7 +143,7 @@
               background-color="white"
               light
               width="10px"
-              label=" enter your username"        
+              label=" enter your username"  
             /> 
             <div class="mt-6 mx-3 subtitle-1 font-weight-medium">Display name</div>
             <v-text-field
@@ -188,7 +193,7 @@
             <div class="mt-6 mx-3 subtitle-1 font-weight-medium">E-mail address</div>
             <v-text-field
               v-model="email"
-              :rules="[rules.required]"
+              :rules="[rules.required,rules.emailRule]"
               solo
               class="mt-1 mx-2"
               dense
@@ -231,7 +236,8 @@
                             :label=item.name 
                             :value=item._id 
                             :rules="[rules.tagRule]"
-                            hide-details>
+                            hide-details
+                          >
                           </v-checkbox>
                       </div>
                       <v-divider></v-divider>
@@ -257,14 +263,16 @@
                   </v-card>
                 </v-dialog>
               </div>
+            </v-form>
           </v-container>
           <v-divider class="mt-3"></v-divider>
           <v-card-actions>
             <v-btn
+              :disabled="!valid"
               color="grey darken-1"
               outlined
               class="mx-3 mt-4 mb-2"
-              @click="dialog = false"
+              @click="submitUser; register = false;"
             >
               Sign up
             </v-btn>
@@ -285,8 +293,6 @@
 </template>
 
 <script>
-const url = 'http://localhost:5000/tag'
-
 export default {
   name: "Bar",
   components: {
@@ -296,6 +302,7 @@ export default {
     register: false,
     show: false,
     chooseTag:false,
+    valid:true,
     tagList: [],
 
     avatar: "/Tantrum/src/image/pepe_meme.jpg",
@@ -309,6 +316,7 @@ export default {
       required: value => !!value || 'Required',
       min: v => v.length >= 8 || 'Min 8 characters',
       max: v => v.length <= 16 || 'Max 16 characters',
+      emailRule: v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
       tagRule: v=>v.length > 0 || 'Please select at least 1 tag'
     }
   }),
@@ -317,7 +325,27 @@ export default {
     return (this.password === this.confirmPassword) ? '' : 'Password must match'
     },
     getTag(){
-      this.$http.get(url).then(response => (this.tagList = response.data))
+      this.$http.get("/tag").then(response => (this.tagList = response.data))
+    }
+    ,
+    submitUser(){
+        this.$http.post("/user",
+          {
+            avatar: this.avatar,
+            username: this.username,
+            displayName: this.displayName,
+            password: this.password,
+            email: this.email,
+            favTag: this.favTag
+          }).then(response => (response))
+    },
+    validate () {
+      if (this.$refs.form.validate()) {
+        this.snackbar = true
+        return 1
+    }else{
+      return 0
+    }
     }
   }
 }
