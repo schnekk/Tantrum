@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+var mongoose = require('mongoose');
 
 // model for data
 const tagModel = require('../models/tagModel')
@@ -121,6 +122,19 @@ router.patch('/game/:id',async (req,res)=>{
       await game.save()
       res.status(200).send("Success")
     }
+  }catch(err){
+    res.status(500).send(err)
+  }
+})
+
+//show a game
+router.get('/game/:id',async (req,res)=>{
+  try{
+    gameid = mongoose.Types.ObjectId(req.params.id)
+    const game = await gameModel.aggregate([
+      {$match: {_id: gameid}}
+    ])
+    res.send(game)
   }catch(err){
     res.status(500).send(err)
   }
