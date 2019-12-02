@@ -10,7 +10,7 @@ import AdminHome from './views/AdminHome'
 import Adminprofile from './views/Adminprofile'
 import profileother from './views/profileother'
 import Editreview from './views/Editreview'
-
+import Buttonforgetusername from './views/Buttonforgetusername'
 Vue.use(Router)
 
 export default new Router({
@@ -61,6 +61,11 @@ export default new Router({
       path: '/profileX',
       name: 'profilenother',
       component: profileother
+    },
+    {
+      path: '/forgetusername',
+      name: 'forgetusername',
+      component: Buttonforgetusername
     },
   ]
 })

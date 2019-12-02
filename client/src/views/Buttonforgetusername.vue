@@ -1,17 +1,19 @@
 <template>
+    <v-container>
+      
     <div class="text-center">
     <v-dialog
       v-model="dialog"
       width="600"
     >
       <template v-slot:activator="{ on }">
-        <div
-          color="red lighten-2"
-          dark
-          v-on="on"
-        >
-          Click Me
-        </div>
+        <v-btn
+              text
+              v-on="on"
+              class="mt-3"        
+            >
+            Forget username ?
+            </v-btn>
       </template>
 
       <v-card>
@@ -64,4 +66,14 @@
       </v-card>
     </v-dialog>
   </div>
+    </v-container>
 </template>
+<script>
+  export default {
+    data () {
+      return {
+        dialog: false,
+      }
+    },
+  }
+</script>

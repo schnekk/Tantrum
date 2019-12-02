@@ -2,6 +2,7 @@
 <v-app>
   <v-content>
     <v-card class="mb-10">
+      <router-link to="info">
       <v-img
         class="white--text align-end"
         height="450px"
@@ -9,6 +10,7 @@
       >
         <v-card-title class="display-1">Monter Hunter World : Iceborn</v-card-title>
       </v-img>
+      </router-link>
     </v-card>
     
     <div class="ma-5">
