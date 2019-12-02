@@ -21,9 +21,7 @@
       value="100"
         ></v-progress-linear>
     </v-row>
-  
- 
-  
+   
         <v-row class="mt-12" justify="">
          <v-col cols ="3">
        </v-col>
@@ -93,23 +91,81 @@
       <v-card>
         <v-card-title>Game tag</v-card-title>
         <v-divider></v-divider>
-        <v-card-text style="height: 300px;">         
-          <v-radio-group multiple  v-model="dialogm1" column>
-            <v-radio label="RPG" value="RPG"></v-radio>
-            <v-radio label="Action" value="Action"></v-radio>
-            <v-radio label="Adventure" value="Adventure"></v-radio>
-            <v-radio label="Horror" value="Horror"></v-radio>
-            <v-radio label="Side Scrolling" value="Side Scrolling"></v-radio>
-            <v-radio label="Open World" value="Open World"></v-radio>
-            <v-radio label="Arcade" value="Arcade"></v-radio>
-            <v-radio label="Board Game" value="Board Game"></v-radio>
-            <v-radio label="Racing" value="Racing"></v-radio>
-            <v-radio label="Turn Baesd" value="Turn Baesd"></v-radio>
-            <v-radio label="Strategy" value="Strategy"></v-radio>
-            <v-radio label="Puzzle" value="Puzzle"></v-radio>
-            <v-radio label="Shooting" value="Shooting"></v-radio>
-            <v-radio label="Sport" value="Sport"></v-radio>
-          </v-radio-group>
+        <v-card-text style="height: 300px;">               
+            <v-checkbox
+              v-model="ex4"
+              label="RPG"
+              color="indigo"
+              value="RPG"
+              hide-details
+            ></v-checkbox>
+         
+            <v-checkbox
+              v-model="ex4"
+              label="Action"
+              color="indigo"
+              value="Action"
+              hide-details
+            ></v-checkbox>
+            <v-checkbox
+              v-model="ex4"
+              label="Advanture"
+              color="indigo"
+              value="Advanture"
+              hide-details
+            ></v-checkbox>
+          
+            <v-checkbox
+              v-model="ex4"
+              label="Horror"
+              color="indigo"
+              value="Horror"
+              hide-details
+            ></v-checkbox>
+            <v-checkbox
+              v-model="ex4"
+              label="Side Scrolling"
+              color="indigo"
+              value="Side Scrolling"
+              hide-details
+            ></v-checkbox>            
+            <v-checkbox
+              v-model="ex4"
+              label="Open World"
+              color="indigo"
+              value="Open World"
+              hide-details
+            ></v-checkbox>
+         
+            <v-checkbox
+              v-model="ex4"
+              label="Arcade"
+              color="indigo"
+              value="Arcade"
+              hide-details
+            ></v-checkbox>
+            <v-checkbox
+              v-model="ex4"
+              label="Board Game"
+              color="indigo"
+              value="Board Game"
+              hide-details
+            ></v-checkbox>
+          
+            <v-checkbox
+              v-model="ex4"
+              label="Racing"
+              color="indigo"
+              value="Racing"
+              hide-details
+            ></v-checkbox>
+            <v-checkbox
+              v-model="ex4"
+              label="Turn Based"
+              color="indigo"
+              value="Turn Based"
+              hide-details
+            ></v-checkbox>
         </v-card-text>
         <v-divider></v-divider>
         <v-card-actions>
@@ -410,13 +466,12 @@
 
 export default {
   name: 'App',
-
   components: {
 
   },
 
   data: () => ({
-    //
+    
   }),
 };
 </script>
