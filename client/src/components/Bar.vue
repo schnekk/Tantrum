@@ -79,7 +79,7 @@
         <v-btn
               text
               v-on="on"
-              class="mt-3"        
+              class="mt-4"        
             >
             Forget username ?
             </v-btn>
@@ -145,7 +145,7 @@
         <v-btn
               text
               v-on="on"
-              class="mt-3"        
+              class="mt-4"        
             >
             Forget password ?
             </v-btn>

@@ -8,13 +8,13 @@
         height="450px"
         src="@/assets/monsterhunter.png"
       >
-        <v-card-title class="display-1">Monter Hunter World : Iceborn</v-card-title>
+        <v-card-title class="display-1 ">Monter Hunter World : Iceborn</v-card-title>
       </v-img>
       </router-link>
     </v-card>
     
     <div class="ma-5">
-      <hl class ="display-2">Feature&Recommended</hl>
+      <hl class ="display-2">Feature&Recommended</hl>  <hl>toAdminCreate  </hl> <hl>toAdminGamepage  </hl> <hl>toAdminHome  </hl> <hl>toAdminProfile  </hl>
     </div>
     <v-container fluid>
       <v-row justify="space-around">
@@ -70,6 +70,14 @@ export default {
   components: {
   },
   data: () => ({
+    
   }),
 }
 </script>
+<style scoped>
+  .link {    
+    text-decoration: none;
+    color: #FFFF  
+  }
+  
+</style>
