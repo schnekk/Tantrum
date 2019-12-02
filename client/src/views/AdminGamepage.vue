@@ -1,14 +1,14 @@
 <template>
   
   <v-app>
-    
+   
   <v-content>
     <v-container fluid>      
-     <v-row>
+     <v-row >
         <v-col cols="12">
         <div class="">
-      <hl class ="display-1">Monter Hunter World : Iceborn</hl>
-       <v-btn class="mb-2" text color="pink"><v-icon>mdi-heart</v-icon></v-btn> 
+      <hl  class ="display-1">Monter Hunter World : Iceborn</hl>    
+      <v-btn class="" text color><v-icon>mdi-pencil-outline</v-icon></v-btn>   
      </div>
         </v-col>
     </v-row>
@@ -21,25 +21,25 @@
     </v-row>
     <v-row justify="space-around">
       <v-col class="my-4" cols="8">
-        <v-img src="./assets/monsterhunter.png" aspect-ratio="2.3"></v-img>
+        <v-img :src="require('@/assets/monsterhunter.png')" aspect-ratio="2.3"></v-img>
       </v-col>
      </v-row>
 
        <v-row justify="center">
      <v-col cols="1">
-        <v-img src="./assets/monsterhunter.png" aspect-ratio="2"></v-img>
+        <v-img :src="require('@/assets/monsterhunter.png')" aspect-ratio="2"></v-img>
       
       </v-col>
        <v-col cols="1">
-        <v-img src="./assets/monsterhunter.png" aspect-ratio="2"></v-img>
+        <v-img :src="require('@/assets/monsterhunter.png')" aspect-ratio="2"></v-img>
        
       </v-col>
       <v-col cols="1">
-        <v-img src="./assets/monsterhunter.png" aspect-ratio="2"></v-img>
+        <v-img :src="require('@/assets/monsterhunter.png')" aspect-ratio="2"></v-img>
        
       </v-col>
        <v-col cols="1">
-        <v-img src="./assets/monsterhunter.png" aspect-ratio="2"></v-img>
+        <v-img :src="require('@/assets/monsterhunter.png')" aspect-ratio="2"></v-img>
        
       </v-col>
       </v-row>
@@ -180,7 +180,7 @@
      <v-col cols="1">
      </v-col>
       <v-col cols="1">
-         <v-img class="min=" src="./assets/spec1.png" aspect-ratio="1"></v-img>
+         <v-img class="min=" :src="require('@/assets/spec1.png')" aspect-ratio="1"></v-img>
      </v-col>
      <v-col cols="8">
          <div class="headline font-weight-bold mt-5" 
@@ -223,13 +223,13 @@
        <v-col cols="1">
      </v-col>
      <v-col  cols="3">
-       <v-img src="./assets/Trusted.png" aspect-ratio="2"></v-img>
+       <v-img :src="require('@/assets/Trusted.png')" aspect-ratio="2"></v-img>
      </v-col>
      <v-col class="mx-10" cols="3">
-       <v-img class="my-12" src="./assets/Meta.png" aspect-ratio="4"></v-img>
+       <v-img class="my-12" :src="require('@/assets/Meta.png')" aspect-ratio="4"></v-img>
      </v-col>
      <v-col cols="3">
-       <v-img src="./assets/IGN.png" aspect-ratio="2"></v-img>
+       <v-img :src="require('@/assets/IGN.png')" aspect-ratio="2"></v-img>
      </v-col>
    </V-row>  
 
@@ -293,7 +293,7 @@
     ></v-progress-linear>
     </v-row>
 
-  <v-row class="mt-4">
+  <v-row class="ma-4">
        <v-col cols ="3">
        </v-col>
      <v-col   cols = "1" > 
@@ -318,26 +318,16 @@
          ></div>
     </v-avatar>
      </v-col>
-      <v-col cols = "6" > 
-       <v-textarea
-          solo
-          auto-grow
-          name="input-7-4"
-          value=" Monster Hunter: World received critical acclaim upon release, with critics praising how Capcom was able to make the game more accessible to new players and to Western markets, without detracting from the series' core gameplay elements and enjoyable difficulty, and fully taking advantage of the computational capacity of modern consoles to create living ecosystems, with some even calling it the best in the franchise. Monster Hunter: World is the best-selling game in Capcom's history, with over 14 million copies shipped by October 2019. A large expansion pack, titled Iceborne, was released in September 2019."
-          row-height="50"
-          hide-details
-        ></v-textarea>
-      </v-col>
+       <v-col cols="5">
+         <div class="font-weight-bold ml-5" 
+        
+         > Monster Hunter: World received critical acclaim upon release, with critics praising how Capcom was able to make the game more accessible to new players and to Western markets, without detracting from the series' core gameplay elements and enjoyable difficulty, and fully taking advantage of the computational capacity of modern consoles to create living ecosystems, with some even calling it the best in the franchise. Monster Hunter: World is the best-selling game in Capcom's history, with over 14 million copies shipped by October 2019. A large expansion pack, titled Iceborne, was released in September 2019.
+    </div>
+     </v-col>
+      <v-col cols="3">
+         <v-btn class="" text color="red"><v-icon>mdi-delete</v-icon></v-btn>  
+     </v-col> 
   </v-row>
-
-    <v-row class="">
-     <v-col class="" cols ="8">
-       </v-col>
-     <v-col cols = "" > 
-       <v-btn class="ml-8" outlined color>Cancel</v-btn>
-         <v-btn class="ml-2" outlined color>Save Changes</v-btn>
-      </v-col>
-  </v-row> 
 
 
 <v-row>
@@ -380,28 +370,17 @@
     </div>
      </v-col>
       <v-col cols="3">
+          <v-btn class="" text color="red"><v-icon>mdi-delete</v-icon></v-btn>  
      </v-col> 
   </v-row>
 
- <v-row>
-     <v-col>
-     </v-col>
-   </v-row>
-  
-
-   
-   
-   <v-row>
-     <v-col>
-     </v-col>
-   </v-row>
-  
-       
+     <v-row>
+      <v-col>
+      </v-col>
+    </v-row>
 
 
 
-
-  
 
   </v-container>
     </v-content>

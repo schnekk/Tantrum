@@ -3,7 +3,7 @@
  <template>
   <v-app>
    
-  
+   
 
 
    <v-content >
@@ -40,7 +40,7 @@
             <v-col cols ="2">
        </v-col>
        <v-col>
-         
+          
         </v-col>
        </v-row>
      </v-col>
@@ -54,7 +54,7 @@
        <v-text-field
           solo
           name="input-7-4"
-           value ="Marcus Obriendasdass"
+           value ="Marcus Obrien"
           hide-details
         ></v-text-field>
          </v-col>
@@ -76,7 +76,7 @@
         ></v-text-field>
          </v-col>
           <v-col>
-         
+       
         </v-col>
          </v-row>
          <v-row> 
@@ -174,15 +174,15 @@
      
      <v-row justify="center">
      <v-col cols="2">
-        <v-img src="./assets/Pla.png" aspect-ratio="2"></v-img>
+        <v-img :src="require('@/assets/Pla.png')" aspect-ratio="2"></v-img>
       
       </v-col>
        <v-col cols="2">
-        <v-img src="./assets/TeKKen.png" aspect-ratio="2"></v-img>
+        <v-img :src="require('@/assets/TeKKen.png')" aspect-ratio="2"></v-img>
        
       </v-col>
       <v-col cols="2">
-        <v-img src="./assets/cyber.png" aspect-ratio="2"></v-img>
+        <v-img :src="require('@/assets/cyber.png')" aspect-ratio="2"></v-img>
       </v-col>
      
       </v-row>
@@ -350,24 +350,12 @@
      </v-col>
     </v-row>
 
-    <v-row>
-      <v-col>
+     <v-row  justify="end">
+      <v-col  cols="1" sm="3" md="1">
+        <v-btn  outlined color>Ban Account</v-btn>
       </v-col>
     </v-row>
 
-    
-
-
-
-
-
-   
-
-
-
-
-    
-    
     </v-container>
     </v-content>
   </v-app>
