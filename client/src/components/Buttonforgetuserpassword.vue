@@ -5,13 +5,12 @@
       width="600"
     >
       <template v-slot:activator="{ on }">
-        <div
-          color="red lighten-2"
-          dark
-          v-on="on"
-        >
-          Click Me
-        </div>
+        <v-btn
+              text
+              v-on="on"
+              class="mt-3"
+            >
+            Forget password ?
       </template>
 
       <v-card>
