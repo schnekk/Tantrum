@@ -1,60 +1,11 @@
 <template>
   <v-app>
-    <v-app-bar  
-      app
-      class="justify-center"
-      color="#212121"
-      dark> 
-      <v-col cols="1">
-        <v-appbar-title>
-          <img
-          class =""
-          :src="require('@/assets/STREADDIT (1).png')"
-          alt="Logo"
-          width=""
-          height=""
-          style="cursor: pointer">
-        </v-appbar-title>
-      </v-col>
-      <v-col cols="1"></v-col>
-      <v-col cols="8">
-        <v-text-field
-          solo
-          class="ma-4"
-          dense
-          background-color="white"
-          light
-          width="10px"
-          hide-details
-          label=" Search"
-          prepend-inner-icon="mdi-magnify"/> 
-      </v-col>
-      <v-row justify="">
-        <v-col cols="7"></v-col>
-        <v-avatar enabled class="profile" > 
-          <img class=""
-            src="https://cdn.vuetifyjs.com/images/john.jpg"
-            alt="John"
-          >
-          <v-list-item > 
-            <v-list-item-content >
-              <v-list-item-title class="title m">Marcus Obrien</v-list-item-title>
-              <v-list-item-subtitle>
-                <v-btn text x-small Lowercase>Log out</v-btn>
-              </v-list-item-subtitle>
-            </v-list-item-content>
-          </v-list-item>   
-        </v-avatar> 
-      </v-row>
-    </v-app-bar>
-
     <v-content>
       <v-container fluid>      
         <v-row>
           <v-col cols="12">
             <div class="">
-              <hl class ="display-1">Monter Hunter World : Iceborn</hl>
-            <v-btn class="mb-2" text color="pink"><v-icon>mdi-heart</v-icon></v-btn>
+              <hl class ="display-1">Grand Thefr Auto V</hl>
             </div>
           </v-col>
         </v-row>
@@ -69,22 +20,22 @@
 
         <v-row justify="space-around">
           <v-col class="my-4" cols="8">
-            <v-img :src="require('@/assets/monsterhunter.png')" aspect-ratio="2.3"></v-img>
+            <v-img :src="require('@/assets/gta.jpg')" aspect-ratio="2.3"></v-img>
           </v-col>
         </v-row>
-  
+
         <v-row justify="center">
           <v-col cols="1">
-            <v-img :src="require('@/assets/mh1.jpg')" aspect-ratio="2"></v-img>
+            <v-img :src="require('@/assets/gta1.jpg')" aspect-ratio="2"></v-img>
           </v-col>
           <v-col cols="1">
-            <v-img :src="require('@/assets/mh2.jpg')" aspect-ratio="2"></v-img>
+            <v-img :src="require('@/assets/gta2.jpg')" aspect-ratio="2"></v-img>
           </v-col>
           <v-col cols="1">
-            <v-img :src="require('@/assets/mh4.jpg')" aspect-ratio="2"></v-img>
+            <v-img :src="require('@/assets/gta3.jpg')" aspect-ratio="2"></v-img>
           </v-col>
           <v-col cols="1">
-            <v-img :src="require('@/assets/mh5.jpg')" aspect-ratio="2"></v-img>
+            <v-img :src="require('@/assets/gta4.jpg')" aspect-ratio="2"></v-img>
           </v-col>
         </v-row>
 
@@ -93,8 +44,8 @@
           <v-col cols="9">
             <v-btn class="ma-1" outlined color>Co-op</v-btn>
             <v-btn class="ma-1" outlined color>Action</v-btn>
-            <v-btn class="ma-1" outlined color>Hunting</v-btn>
-             <v-dialog v-model="dialog" scrollable max-width="300px">
+            <v-btn class="ma-1" outlined color>Shooting</v-btn>
+            <v-dialog v-model="dialog" scrollable max-width="300px">
       <template v-slot:activator="{ on }">
         <v-btn class="ma-1" outlined color v-on="on" >MORE...</v-btn>
       </template>
@@ -103,23 +54,22 @@
         <v-divider></v-divider>
         <v-card-text style="height: 300px;">
            <div class="mt-4" >
-             RPG
+             Co-op
            </div>
              <div class="mt-4" >
              Action
            </div>
              <div class="mt-4" >
-             Hunting
+             Shooting
            </div>
              <div class="mt-4" >
-             Co-op
+             Open world
            </div>
         </v-card-text>
         <v-divider></v-divider>
         <v-card-actions>
           <v-col cols="9">
           </v-col>
-          <v-btn color="blue darken-1" class="btn-left" text @click="dialog = false">Close</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -140,7 +90,8 @@
           <v-col cols="2"></v-col>
           <v-col cols="8">
             <div class="font-weight-bold"> 
-            Monster Hunter: World[a] is an action role-playing game developed and published by Capcom. A part of the Monster Hunter series, it was released worldwide for PlayStation 4 and Xbox One in January 2018, with a Microsoft Windows version in August 2018. In the game, the player takes the role of a Hunter, tasked to hunt down and either kill or trap monsters that roam in one of several environmental spaces. If successful, the player is rewarded through loot consisting of parts from the monster and other elements that are used to craft weapons and armor, amongst other equipment. The game's core loop has the player crafting appropriate gear to be able to hunt down more difficult monsters, which in turn provide parts that lead to more powerful gear. Players may hunt alone or in a group of up to four players via the game's online multiplayer.   
+            When a young street hustler, a retired bank robber and a terrifying psychopath find themselves entangled with some of the most frightening and deranged elements of the criminal underworld, the U.S. government and the entertainment industry, they must pull off a series of dangerous heists to survive in a ruthless city in which they can trust nobody, least of all each other.
+            Grand Theft Auto V for PC offers players the option to explore the award-winning world of Los Santos and Blaine County in resolutions of up to 4k and beyond, as well as the chance to experience the game running at 60 frames per second.   
             </div>
           </v-col>
           <v-col cols="2"></v-col> 
@@ -150,7 +101,7 @@
           <v-col cols="2"></v-col>
           <v-col cols="8">
             <div class="font-weight-bold"> 
-              Announced at E3 2017, Monster Hunter: World adopts the series' standard formulas from its older home console roots and recent handheld games to take advantage of the higher processing power provided by modern consoles and computers. Changes made in Monster Hunter: World include creating environmental spaces that are fully connected and removing the "zones" that were necessary for the PlayStation 2 and handheld games, more advanced monster artificial intelligence and physics to create seemingly living ecosystems that could be taken advantage of during hunts, a more persistent cooperative multiplayer experience, and a refinement of the game's user interface, menu systems, and tutorials to help with bringing new players into the series. These changes led Capcom to plan for the game's simultaneous release across both Japan and Western markets, since Monster Hunter as a series has generally languished in the West compared to Japan partially due to disparate release schedules. Capcom also opted to support online play between these different geographic regions for similar reasons. The delay for the Windows release was attributed to Capcom seeking to make sure its first foray into the Windows market was optimized for players on computers. 
+              The game offers players a huge range of PC-specific customization options, including over 25 separate configurable settings for texture quality, shaders, tessellation, anti-aliasing and more, as well as support and extensive customization for mouse and keyboard controls. Additional options include a population density slider to control car and pedestrian traffic, as well as dual and triple monitor support, 3D compatibility, and plug-and-play controller support. 
             </div>
           </v-col>
           <v-col cols="2"></v-col> 
@@ -160,7 +111,18 @@
           <v-col cols="2"></v-col>
           <v-col cols="8">
             <div class="font-weight-bold"> 
-              Monster Hunter: World received critical acclaim upon release, with critics praising how Capcom was able to make the game more accessible to new players and to Western markets, without detracting from the series' core gameplay elements and enjoyable difficulty, and fully taking advantage of the computational capacity of modern consoles to create living ecosystems, with some even calling it the best in the franchise. Monster Hunter: World is the best-selling game in Capcom's history, with over 14 million copies shipped by October 2019. A large expansion pack, titled Iceborne, was released in September 2019.
+             Grand Theft Auto V for PC also includes Grand Theft Auto Online, with support for 30 players and two spectators. Grand Theft Auto Online for PC will include all existing gameplay upgrades and Rockstar-created content released since the launch of Grand Theft Auto Online, including Heists and Adversary modes.
+             The PC version of Grand Theft Auto V and Grand Theft Auto Online features First Person Mode, giving players the chance to explore the incredibly detailed world of Los Santos and Blaine County in an entirely new way.
+            </div>
+          </v-col>
+            <v-col cols="2"></v-col> 
+        </v-row>
+
+         <v-row justify="">
+          <v-col cols="2"></v-col>
+          <v-col cols="8">
+            <div class="font-weight-bold"> 
+            Grand Theft Auto V for PC also brings the debut of the Rockstar Editor, a powerful suite of creative tools to quickly and easily capture, edit and share game footage from within Grand Theft Auto V and Grand Theft Auto Online. The Rockstar Editor’s Director Mode allows players the ability to stage their own scenes using prominent story characters, pedestrians, and even animals to bring their vision to life. Along with advanced camera manipulation and editing effects including fast and slow motion, and an array of camera filters, players can add their own music using songs from GTAV radio stations, or dynamically control the intensity of the game’s score. Completed videos can be uploaded directly from the Rockstar Editor to YouTube and the Rockstar Games Social Club for easy sharing.
             </div>
           </v-col>
             <v-col cols="2"></v-col> 
@@ -187,7 +149,7 @@
           <v-col class="ml-12" cols="8">
             <vue-plyr>
               <div class="plyr__video-embed">
-                <iframe class="ml-12" width="1020" height="630" src="https://www.youtube.com/embed/WecYe1RFMnc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe class="ml-12" width="1020" height="630" src="https://www.youtube.com/embed/wrFZ3NNyKtE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
             </vue-plyr>
           </v-col>
@@ -210,20 +172,20 @@
           <v-row class="my-4" justify="">
             <v-col cols="1"></v-col>
             <v-col cols="1">
-              <v-img class="min=" :src="require('@/assets/spec1.png')" aspect-ratio="1"></v-img>
+              <v-img class="min=" :src="require('@/assets/gta6.jpg')" aspect-ratio="1"></v-img>
             </v-col>
             <v-col cols="8">
               <div class="headline font-weight-bold mt-5" style="width;"> 
-                Monster Hunter World : Iceborne
+                Grand Theft Auto V
               </div>
               <div class="font-weight-bold"> 
-                Developer : capcom 
+                Developer : Rockstar North 
               </div>
               <div class="font-weight-bold"> 
-                Platforms : PC , Xbox One , PS4
+                Platforms : PC , PS4
               </div>
               <div class="font-weight-bold"> 
-                Release Date : 6 September 2019 ( 9th January 2020 on PC )
+                Release Date : 14 Apr, 2015
               </div>
             </v-col> 
           </v-row> 
@@ -267,12 +229,12 @@
           </v-col>
           <v-col class="m" cols="3">
             <div class="font-weight-bold">
-              9/10
+              8.3/10
             </div>
           </v-col>
           <v-col class="" cols="3">
             <div class="font-weight-bold">
-              89%
+              93%
             </div>
           </v-col>
         </v-row>
@@ -340,12 +302,10 @@
           </v-col>
           <v-col cols="5">
             <div class="font-weight-bold ml-5"> 
-              Monster Hunter: World received critical acclaim upon release, with critics praising how Capcom was able to make the game more accessible to new players and to Western markets, without detracting from the series' core gameplay elements and enjoyable difficulty, and fully taking advantage of the computational capacity of modern consoles to create living ecosystems, with some even calling it the best in the franchise. Monster Hunter: World is the best-selling game in Capcom's history, with over 14 million copies shipped by October 2019. A large expansion pack, titled Iceborne, was released in September 2019.
+              Don't get the game to play only online, i got banned once becasue my hard drive failed reinstalled the game and windows and got banned for 4 weeks no modds or cheating, rockstar support says i just gotta wait even tho i had video proof.I got banned again from modders/cheatters giving me money and doing things to my online guy witch froze my PC a few times or the game. Now im banned till the year 2035 still no help from supportThe new anti-cheat system rockstar has seems to banned players even tho they dont cheatYes the game is great for story mode only, online is messed up with all the cheaters, and rockstar support and anti cheat system chances are will banned you and wont help you.
             </div>
           </v-col>
-          <v-col cols="3">
-            <v-btn class="" text color><v-icon>mdi-pencil-outline</v-icon></v-btn>
-            </v-col> 
+          <v-col cols="3"></v-col> 
         </v-row>
 
         <v-row>
@@ -379,11 +339,12 @@
           </v-col>
           <v-col cols="5">
             <div class="font-weight-bold ml-5"> 
-              was released in September 2019.
+              
+3 YEARS AGO
+Something EVERYBODY who owns this game on PC should do. Run the game then Alt-Tab out of it. Open task manager, find GTA5.exe under the applications tab. Then right click it and set priority to high (Win10 users right click gta5.exe then "show details" then right click gta5.exe and set priority to high). Then alt-tab back into the gta5 window (sometimes you have to alt-return to make it go back to full screen).On both of my systems this has made a big difference in how the game runs. For me it's the difference between regular dips to 40fps or constant 60fps. You have to do it every time you run the game or if the game restarts due to changes to gfx settings. Both my i7 930 system and my i7 6700k system both see improvements doing this.
             </div>
           </v-col>
-          <v-col cols="3">
-            </v-col> 
+          <v-col cols="3"></v-col> 
         </v-row>
       </v-container>
     </v-content>
@@ -392,14 +353,10 @@
 
 <script>
 export default {
-  name: 'App',
-
+  name: "Gamepage",
   components: {
-
   },
-
   data: () => ({
-    //
   }),
-};
+}
 </script>
