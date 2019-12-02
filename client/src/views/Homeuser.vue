@@ -12,7 +12,7 @@
        <v-appbar-title>
          <img
         class =""
-        src="./assets/STREADDIT (1).png"
+        src="@/assets/STREADDIT (1).png"
         alt="Logo"
         width="auto"
         height="10%"
@@ -58,11 +58,6 @@
          
     </v-avatar> 
     </v-row>
-
-      
-
-
-
   </v-app-bar>
 
   <v-content>
@@ -70,7 +65,7 @@
     <v-img
       class="white--text align-end"
       height="450px"
-      src="./assets/monsterhunter.png"
+      src="@/assets/monsterhunter.png"
     >
       <v-card-title class="display-1">Monter Hunter World : Iceborn</v-card-title>
     </v-img>
