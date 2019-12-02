@@ -10,6 +10,7 @@ import AdminHome from './views/AdminHome'
 import Adminprofile from './views/Adminprofile'
 import profileother from './views/profileother'
 import Editreview from './views/Editreview'
+
 Vue.use(Router)
 
 export default new Router({

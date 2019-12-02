@@ -23,6 +23,7 @@ const devRoute = require('./routes/dev')
 const gameRoute = require('./routes/game')
 const reviewRoute = require('./routes/review')
 const userRoute = require('./routes/user')
+const loginRoute = require('./routes/login')
 
 //all routes are called here
 app.use(tagRoute)
@@ -30,6 +31,7 @@ app.use(devRoute)
 app.use(gameRoute)
 app.use(reviewRoute)
 app.use(userRoute)
+app.use(loginRoute)
 
 app.listen(5000, () => {
   console.log('Server is running.')

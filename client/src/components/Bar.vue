@@ -42,7 +42,7 @@
           STREADDIT
           </v-card-title>
           <v-container>
-            <div class="font-weight-medium headline text-left mx-4 my-2">User account</div>
+            <div class="font-weight-medium headline text-left mx-4 my-2">Login</div>
             <v-divider></v-divider>
             <div class="mt-6 mx-3 subtitle-1 font-weight-medium">Username</div>
             <v-text-field
@@ -66,7 +66,6 @@
               background-color="white"
               light
               width="10px"
-              hide-details
               label=" enter your password"        
             /> 
             <v-btn
@@ -88,9 +87,9 @@
               color="grey darken-1"
               outlined
               class="mx-3 mb-2"
-              @click="dialog = false"
+              @click="login(); login=false"
             >
-            Confirm
+            login
             </v-btn>
             <v-btn
               color="grey darken-1"
@@ -329,8 +328,7 @@ export default {
     }
     ,
     submitUser(){
-        this.$http.post("/user",
-          {
+        this.$http.post("/user",{
             avatar: this.avatar,
             username: this.username,
             displayName: this.displayName,
@@ -346,6 +344,12 @@ export default {
     }else{
       return 0
     }
+    },
+    login(){
+      this.$http.post("/login",{
+        username: this.username,
+        password: this.password
+      }).then(response => (response))
     }
   }
 }
